@@ -3,21 +3,21 @@
 namespace Database\Seeders;
 
 use App\Models\Images;
-use App\Models\Product;
+use App\Models\Post;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ProductSeeder extends Seeder
+class PostSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Product::factory(40)->create()->each(function (Product $products){
-             Images::factory(2)->create([
-                'imageable_id'=>$products->id,
-                'imageable_type'=>Product::class
+        Post::factory(50)->create()->each(function(Post $post){
+            Images::factory()->create([
+                'imageable_id'=>$post->id,
+                'imageable_type'=>Post::class
             ]);
         });
     }

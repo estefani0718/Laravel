@@ -17,5 +17,11 @@ class Images extends Model
     {
         return $this->hasOneThrough(Product::class, Category::class);
     }
+
+    public function imageable()
+    {
+       return $this->morphTo();
+    }
+    
 }
 

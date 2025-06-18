@@ -22,8 +22,10 @@ class ProductFactory extends Factory
             'name' =>fake()->word(),
             'price' =>fake()->randomFloat(2,10,1000),
             'stock'=>fake()->numberBetween(0,100),
-            'category_id'=>Category::all()->random()->id,
-            'image_id' =>Images::factory()->create()->id,
+            'category_id'=>Category::all()->random()->id
+            // 'image_id' =>Images::factory()->create()->id,
+           
+
         ];
     }
 }
