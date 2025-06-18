@@ -12,6 +12,11 @@ class Product extends Model
     protected $fillable = [
         'name',
     ];
+    public function images()
+    {
+        return $this->hasOne('Image');
+    }
+
     public function category(){
 
         return $this->belongsTo(Category::class);

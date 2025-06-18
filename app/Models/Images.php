@@ -13,4 +13,9 @@ class Images extends Model
 
         return $this->hasOne(Product::class);
     }
+      public function productImage()
+    {
+        return $this->hasOneThrough(Product::class, Category::class);
+    }
 }
+
